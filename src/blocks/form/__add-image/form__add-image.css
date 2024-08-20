@@ -1,0 +1,14 @@
+.form__add-image {
+    background-color: #9ea3ff;
+    padding: 5px;
+    margin: 8px 0 0;
+    color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    text-shadow: none;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.form__add-image:active {
+    box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+  }

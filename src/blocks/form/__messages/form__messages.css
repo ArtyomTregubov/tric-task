@@ -1,0 +1,12 @@
+.form__messages {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start
+}
+
+@media screen and (max-width: 550px) {
+    .form__messages {
+        width: 285px;
+    }
+}

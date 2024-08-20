@@ -1,0 +1,9 @@
+.form__inputs {
+    width: 45%;
+}
+
+@media screen and (max-width: 550px) {
+    .form__inputs {
+        width: 285px;
+    }
+}

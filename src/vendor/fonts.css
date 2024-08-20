@@ -1,0 +1,47 @@
+@font-face {
+  src: url(./fonts/Snickers_normal.woff2) format('woff2'),
+    url(./fonts/Snickers_normal.woff) format('woff');
+  font-family: 'Snickers Normal';
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  src: url(./fonts/SourceSans3-Regular.woff2) format('woff2'),
+    url(./fonts/SourceSans3-Regular.woff) format('woff');
+  font-family: 'SourceSans3';
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+src: url(./fonts/SourceSans3-Bold.woff2) format('woff2'),
+    url(./fonts/SourceSans3-Bold.woff) format('woff');
+font-family: 'SourseSans3';
+font-weight: 700;
+font-display: swap;
+}
+
+@font-face {
+src: url(./fonts/SourceSans3-Black.woff2) format('woff2'),
+    url(./fonts/SourceSans3-Black.woff) format('woff');
+font-family: 'SourseSans3';
+font-weight: 900;
+font-display: swap;
+}
+
+@font-face {
+  src: url(fonts/Montserrat-Regular.woff2) format('woff2'),
+    url(fonts/Montserrat-Regular.woff) format('woff');
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  src: url(fonts/Montserrat-Medium.woff2) format('woff2'),
+    url(fonts/Montserrat-Medium.woff) format('woff');
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-display: swap;
+}

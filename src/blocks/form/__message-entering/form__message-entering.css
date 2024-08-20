@@ -1,0 +1,5 @@
+@media screen and (max-width: 550px) {
+    .form__message-entering {
+        margin: 5px 0 0;
+    }
+}

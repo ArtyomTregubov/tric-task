@@ -1,0 +1,7 @@
+.form__select {
+    background-image: url(../../../../public/images/select_icon.png);
+    background-size: 25px;
+    background-position-x: 97%;
+    background-position-y: 14px;
+    background-repeat: no-repeat;
+}
