@@ -27,10 +27,14 @@ function Form() {
             errors,
         },
         handleSubmit,
+        getValues,
         reset,
     } = useForm();
 
     const onSubmit = (data) => {
+        if (image) {
+            data.image = image;
+        }
         alert(JSON.stringify(data))
         reset();
         setImage(null);
@@ -49,37 +53,35 @@ function Form() {
             <div className="form__inputs">
 
                 <label htmlFor="name" className="form__label">
-                    <input className="form__input"
+                <input className="form__input"
                         type="text"
                         name="name"
                         placeholder="Имя"
                         id="name"
                         {...register('name', {
-                            required: "*Поле обязательно к заполнению",
-                            minLength: {
-                                value: 2,
-                                message: "Поле должно содержать не менее 2 символов"
+                            validate: value => {
+                                const surname = getValues('surname');
+                                return value.trim().length >= 2 || surname.trim().length >= 2 || "*Поле обязательно к заполнению";
                             }
                         })}
-                        /><br></br>
+                    /><br></br>
                 </label>
 
                 <div className="form__error" id="error">{errors?.name && errors?.name?.message}</div>
 
                 <label htmlFor="surname" className="form__label">
-                    <input className="form__input"
+                <input className="form__input"
                         type="text"
                         name="surname"
                         placeholder="Фамилия"
                         id="surname"
                         {...register('surname', {
-                            required: "*Поле обязательно к заполнению",
-                            minLength: {
-                                value: 2,
-                                message: "Поле должно содержать не менее 2 символов"
+                            validate: value => {
+                                const name = getValues('name');
+                                return value.trim().length >= 2 || name.trim().length >= 2 || "*Поле обязательно к заполнению";
                             }
                         })}
-                        /><br></br>
+                    /><br></br>
                 </label>
                 <div className="form__error" id="error">{errors?.surname && errors?.surname?.message}</div>
 
@@ -93,7 +95,7 @@ function Form() {
                             required: "*Поле обязательно к заполнению",
                             minLength: {
                                 value: 5,
-                                message: "Поле должно содержать не менее 5 символов"
+                                message: "*Поле должно содержать не менее 5 символов"
                             }
                         })}
                         /><br></br>
@@ -103,8 +105,8 @@ function Form() {
                 <select name="form-select" 
                         className="form__select form__input"
                         {...register('formSelect', { 
-                            required: 'Это поле обязательно для заполнения',
-                            validate: value => value !== "Категория" || "Пожалуйста, выберите категорию"
+                            required: '*Поле обязательно к заполнению',
+                            validate: value => value !== "Категория" || "*Пожалуйста, выберите категорию"
                           })}
                         >
                     <optgroup label="Категория" className="search__category">
@@ -129,7 +131,7 @@ function Form() {
                             required: "*Поле обязательно к заполнению",
                             minLength: {
                                 value: 10,
-                                message: "Поле должно содержать не менее 10 символов"
+                                message: "*Поле должно содержать не менее 10 символов"
                             }
                         })}
                         > 
@@ -137,11 +139,13 @@ function Form() {
                 <div className="form__error" id="error">{errors?.message && errors?.message?.message}</div>
 
                 <div className="form__image-container" id="image-container">
-                    <input type="file" 
+                    <input type="file"
+                           name="picture" 
                            id="image-input" 
                            accept="image/*" 
                            hidden
                            onChange={handleChange}
+                           
                            />
                     <label htmlFor="image-input" className="form__add-image">Загрузить изображение</label>
                     <div className="form__image-display" 
